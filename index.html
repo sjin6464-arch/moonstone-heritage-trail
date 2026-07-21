@@ -4,24 +4,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#183a34">
-  <meta name="description" content="A self-guided heritage stamp trail around Moonstone Lane Estate.">
+  <meta
+    name="description"
+    content="A self-guided heritage stamp trail around Moonstone Lane Estate."
+  >
+
   <title>Moonstone Heritage Stamp Trail</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQ3ynhMZJOZqQm1iz3R0Fvla3E2v4pY="
+    crossorigin=""
+  >
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Moonstone Heritage Stamp Trail home">
+    <a
+      class="brand"
+      href="#home"
+      aria-label="Moonstone Heritage Stamp Trail home"
+    >
       <span class="brand-mark">M</span>
       <span>Moonstone Trail</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      Menu
+    </button>
+
     <nav id="site-nav" aria-label="Main navigation">
       <a href="#home">Home</a>
+      <a href="#map">Live Map</a>
       <a href="#trail">Trail</a>
-      <a href="#stamps">Stamp Card <span id="nav-count">0/4</span></a>
+      <a href="#stamps">
+        Stamp Card <span id="nav-count">0/4</span>
+      </a>
     </nav>
   </header>
 
@@ -29,89 +62,332 @@
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow">Thomson–Kallang Identity Corridor</p>
+
         <h1>Find the stories hiding in plain sight.</h1>
-        <p class="hero-lede">Walk Moonstone Lane, discover four heritage stops, complete bite-sized activities and collect a digital stamp at every station.</p>
+
+        <p class="hero-lede">
+          Walk Moonstone Lane, discover four heritage stops, complete
+          bite-sized activities and collect a digital stamp at every station.
+        </p>
+
         <div class="hero-actions">
-          <a class="button primary" href="#trail">Start the trail <span aria-hidden="true">→</span></a>
-          <a class="button secondary" href="#how-it-works">How it works</a>
+          <a class="button primary" href="#trail">
+            Start the trail <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="button secondary" href="#how-it-works">
+            How it works
+          </a>
         </div>
+
         <div class="quick-facts" aria-label="Trail details">
           <span><strong>4</strong> stations</span>
           <span><strong>~45</strong> minutes</span>
           <span><strong>1</strong> keepsake</span>
         </div>
       </div>
-      <div class="hero-visual" role="img" aria-label="Placeholder for a photograph of Moonstone Lane">
+
+      <div
+        class="hero-visual"
+        role="img"
+        aria-label="Placeholder for a photograph of Moonstone Lane"
+      >
         <span>MOONSTONE LANE</span>
         <small>Hero image placeholder</small>
+
         <div class="route-line"></div>
-        <i class="map-pin pin-one">1</i><i class="map-pin pin-two">2</i><i class="map-pin pin-three">3</i><i class="map-pin pin-four">4</i>
+
+        <i class="map-pin pin-one">1</i>
+        <i class="map-pin pin-two">2</i>
+        <i class="map-pin pin-three">3</i>
+        <i class="map-pin pin-four">4</i>
       </div>
     </section>
 
     <section class="how section" id="how-it-works">
       <div class="section-heading">
         <p class="eyebrow">Your pocket guide</p>
+
         <h2>Scan. Explore. Stamp.</h2>
-        <p>No app or account needed. Your progress stays in this browser on this device.</p>
+
+        <p>
+          No app or account is needed. Your progress stays in this browser
+          on this device.
+        </p>
       </div>
+
       <div class="steps">
-        <article><span>01</span><h3>Find a QR marker</h3><p>Look for the trail marker at each station and scan it with your phone camera.</p></article>
-        <article><span>02</span><h3>Complete the activity</h3><p>Read the story, answer or reflect, then unlock that station's stamp.</p></article>
-        <article><span>03</span><h3>Collect all four</h3><p>Open your Stamp Card anytime. Four stamps unlock your explorer keepsake.</p></article>
+        <article>
+          <span>01</span>
+          <h3>Find a QR marker</h3>
+          <p>
+            Look for the trail marker at each station and scan it with your
+            phone camera.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Complete the activity</h3>
+          <p>
+            Read the story, answer or reflect, then unlock that station’s
+            stamp.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>Collect all four</h3>
+          <p>
+            Open your Stamp Card anytime. Four stamps unlock your explorer
+            keepsake.
+          </p>
+        </article>
       </div>
-      <aside class="qr-note"><strong>QR tip:</strong> Allow the QR link to open in your usual browser. Keep using that same browser and device so your stamps stay together.</aside>
+
+      <aside class="qr-note">
+        <strong>QR tip:</strong>
+        Allow the QR link to open in your usual browser. Keep using that same
+        browser and device so your stamps stay together.
+      </aside>
+    </section>
+
+    <section class="map-section section" id="map">
+      <div class="section-heading row-heading">
+        <div>
+          <p class="eyebrow">Find your way</p>
+          <h2>Live trail map</h2>
+          <p>
+            See all checkpoints, show your current location and open walking
+            directions.
+          </p>
+        </div>
+
+        <button class="button primary" id="locate-me">
+          Show my location
+        </button>
+      </div>
+
+      <div
+        id="trail-map"
+        aria-label="Interactive map of Moonstone Lane trail checkpoints"
+      ></div>
+
+      <p class="map-status" id="map-status" role="status">
+        Tap “Show my location” and allow location access when your browser
+        asks.
+      </p>
+
+      <div class="checkpoint-list" id="checkpoint-list"></div>
+
+      <aside class="qr-note">
+        <strong>Safety:</strong>
+        Check traffic before crossing, remain on public paths and follow
+        current signs. Pins are planning guides—verify exact safe stopping
+        points during a site visit before printing QR codes.
+      </aside>
     </section>
 
     <section class="trail section" id="trail">
       <div class="section-heading row-heading">
-        <div><p class="eyebrow">Self-guided route</p><h2>Choose your next stop</h2></div>
-        <p class="progress-label"><span id="trail-count">0</span> of 4 stamps collected</p>
+        <div>
+          <p class="eyebrow">Self-guided route</p>
+          <h2>Choose your next stop</h2>
+        </div>
+
+        <p class="progress-label">
+          <span id="trail-count">0</span> of 4 stamps collected
+        </p>
       </div>
+
       <div class="route-overview" aria-label="Suggested station order">
-        <span class="route-stop">1 Food</span><i>→</i><span class="route-stop">2 Temple</span><i>→</i><span class="route-stop">3 Keramat</span><i>→</i><span class="route-stop">4 Factory</span>
+        <span class="route-stop">1 Food</span>
+        <i>→</i>
+
+        <span class="route-stop">2 Temple</span>
+        <i>→</i>
+
+        <span class="route-stop">3 Keramat</span>
+        <i>→</i>
+
+        <span class="route-stop">4 Factory</span>
       </div>
+
       <div class="station-grid">
         <article class="station-card" data-station="food">
-          <div class="station-image image-food"><span>Food stalls image placeholder</span><b>01</b></div>
-          <div class="station-body"><p class="station-tag">Taste of the neighbourhood</p><h3>Food Stalls</h3><p>Meet the everyday gathering places that keep the estate lively and give visitors a reason to pause.</p><button class="text-link open-station" data-open="food">Explore station →</button></div>
+          <div class="station-image image-food">
+            <span>Food stalls image placeholder</span>
+            <b>01</b>
+          </div>
+
+          <div class="station-body">
+            <p class="station-tag">Taste of the neighbourhood</p>
+            <h3>Food Stalls</h3>
+
+            <p>
+              Meet the everyday gathering places that keep the estate lively
+              and give visitors a reason to pause.
+            </p>
+
+            <button class="text-link open-station" data-open="food">
+              Explore station →
+            </button>
+          </div>
         </article>
+
         <article class="station-card" data-station="temple">
-          <div class="station-image image-temple"><span>Chinese temple image placeholder</span><b>02</b></div>
-          <div class="station-body"><p class="station-tag">Living culture</p><h3>Chinese Temple</h3><p>Discover a place of worship that anchors community memory and deserves thoughtful, respectful visiting.</p><button class="text-link open-station" data-open="temple">Explore station →</button></div>
+          <div class="station-image image-temple">
+            <span>Chinese temple image placeholder</span>
+            <b>02</b>
+          </div>
+
+          <div class="station-body">
+            <p class="station-tag">Living culture</p>
+            <h3>Chinese Temple</h3>
+
+            <p>
+              Discover a place of worship that anchors community memory and
+              deserves thoughtful, respectful visiting.
+            </p>
+
+            <button class="text-link open-station" data-open="temple">
+              Explore station →
+            </button>
+          </div>
         </article>
+
         <article class="station-card" data-station="keramat">
-          <div class="station-image image-keramat"><span>Warehouse exterior image placeholder</span><b>03</b></div>
-          <div class="station-body"><p class="station-tag">Hidden heritage</p><h3>Warehouse &amp; Keramat</h3><p>A quiet heritage feature sits near the warehouse area—a reminder that history can survive in unexpected places.</p><button class="text-link open-station" data-open="keramat">Explore station →</button></div>
+          <div class="station-image image-keramat">
+            <span>Warehouse exterior image placeholder</span>
+            <b>03</b>
+          </div>
+
+          <div class="station-body">
+            <p class="station-tag">Hidden heritage</p>
+            <h3>Warehouse &amp; Keramat</h3>
+
+            <p>
+              A quiet heritage feature sits near the warehouse area—a
+              reminder that history can survive in unexpected places.
+            </p>
+
+            <button class="text-link open-station" data-open="keramat">
+              Explore station →
+            </button>
+          </div>
         </article>
+
         <article class="station-card" data-station="factory">
-          <div class="station-image image-factory"><span>Former factory image placeholder</span><b>04</b></div>
-          <div class="station-body"><p class="station-tag">Industrial memory</p><h3>Former Water Factory</h3><p>Read the built landscape for clues to Moonstone Lane's working and manufacturing past.</p><button class="text-link open-station" data-open="factory">Explore station →</button></div>
+          <div class="station-image image-factory">
+            <span>Former factory image placeholder</span>
+            <b>04</b>
+          </div>
+
+          <div class="station-body">
+            <p class="station-tag">Industrial memory</p>
+            <h3>Former Water Factory</h3>
+
+            <p>
+              Read the built landscape for clues to Moonstone Lane’s working
+              and manufacturing past.
+            </p>
+
+            <button class="text-link open-station" data-open="factory">
+              Explore station →
+            </button>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="stamps section" id="stamps">
-      <div class="section-heading"><p class="eyebrow">Your collection</p><h2>Moonstone Stamp Card</h2><p>Every completed activity reveals one part of the neighbourhood's identity.</p></div>
+      <div class="section-heading">
+        <p class="eyebrow">Your collection</p>
+        <h2>Moonstone Stamp Card</h2>
+
+        <p>
+          Every completed activity reveals one part of the neighbourhood’s
+          identity.
+        </p>
+      </div>
+
       <div class="stamp-card" id="stamp-card"></div>
+
       <div class="reward locked" id="reward">
         <div class="reward-icon">✦</div>
-        <div><p class="eyebrow">Final reward</p><h3 id="reward-title">Keep exploring</h3><p id="reward-copy">Collect all four stamps to unlock your Moonstone Explorer digital keepsake.</p></div>
-        <button class="button primary" id="view-keepsake" hidden>View keepsake</button>
+
+        <div>
+          <p class="eyebrow">Final reward</p>
+          <h3 id="reward-title">Keep exploring</h3>
+
+          <p id="reward-copy">
+            Collect all four stamps to unlock your Moonstone Explorer digital
+            keepsake.
+          </p>
+        </div>
+
+        <button class="button primary" id="view-keepsake" hidden>
+          View keepsake
+        </button>
       </div>
     </section>
 
     <section class="grad-section section">
-      <div class="grad-photo"><span>Your graduation photo here</span><div class="photo-frame"><b>MOONSTONE</b><small>Class of 20__</small></div></div>
-      <div><p class="eyebrow">A stop worth celebrating</p><h2>Mark the milestone</h2><p>Collecting or returning your graduation gown nearby? Use our Moonstone graduation frame idea for a memorable trail photo—framed with local motifs, your graduation year and the words “My next chapter starts here”.</p><p class="respect-note">Choose a safe public spot, keep walkways clear and avoid photographing worshippers or the keramat.</p></div>
+      <div class="grad-photo">
+        <span>Your graduation photo here</span>
+
+        <div class="photo-frame">
+          <b>MOONSTONE</b>
+          <small>Class of 20__</small>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow">A stop worth celebrating</p>
+        <h2>Mark the milestone</h2>
+
+        <p>
+          Collecting or returning your graduation gown nearby? Use our
+          Moonstone graduation frame idea for a memorable trail photo—framed
+          with local motifs, your graduation year and the words “My next
+          chapter starts here”.
+        </p>
+
+        <p class="respect-note">
+          Choose a safe public spot, keep walkways clear and avoid
+          photographing worshippers or the keramat.
+        </p>
+      </div>
     </section>
   </main>
 
-  <footer><div><strong>Moonstone Heritage Stamp Trail</strong><p>A student placemaking concept for Moonstone Lane Estate.</p></div><a href="#home">Back to top ↑</a></footer>
+  <footer>
+    <div>
+      <strong>Moonstone Heritage Stamp Trail</strong>
+      <p>A student placemaking concept for Moonstone Lane Estate.</p>
+    </div>
 
-  <dialog id="station-dialog"><button class="dialog-close" aria-label="Close station">×</button><div id="dialog-content"></div></dialog>
-  <dialog id="keepsake-dialog"><button class="dialog-close" aria-label="Close keepsake">×</button><div id="keepsake-content"></div></dialog>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <dialog id="station-dialog">
+    <button class="dialog-close" aria-label="Close station">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <dialog id="keepsake-dialog">
+    <button class="dialog-close" aria-label="Close keepsake">×</button>
+    <div id="keepsake-content"></div>
+  </dialog>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
   <script src="script.js"></script>
 </body>
 </html>
